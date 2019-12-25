@@ -1,7 +1,6 @@
 
 python pcapng_To_csv.py
-
- 爬取脚本所在的目录的所有一级目录下的pcag并转换为csv文件
+爬取脚本所在的目录的所有一级目录下的pcag并转换为csv文件
 
 
 python data_perspective_coderate.py wireshark_data.csv protocol
