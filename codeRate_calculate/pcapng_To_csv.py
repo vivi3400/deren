@@ -1,3 +1,4 @@
+# coding=utf-8
 import os,glob
 import sys
 import subprocess
@@ -9,10 +10,12 @@ def sharky(source_file,directory,destnation_file):
         s = (source_file.split("\\")[-1])
         filename = os.path.basename(s)
         # filename=(s.split(".")[3])+".csv"
-        filename = filename.split(".")[0]+".csv"
+        filename = filename.split(".")[-2]+".csv"
+        # print filename
         filename = directory+"_"+filename
 
         destnation_file=os.path.join(destnation_file,filename)
+
 
 	# export pcapng as csv
         command_export = ("tshark -r %s -T fields -e frame.number -e frame.time_relative -e ip.src -e ip.dst -e ip.proto -e frame.len -E header=y -E separator=, -E quote=d -E occurrence=f > %s"%(source_file,destnation_file))
@@ -41,7 +44,7 @@ print( csv_path)
 
 #可手动输入目录
 try:
-	csv_path = sys.argy[1]
+	csv_path = sys.argv[1]
 except:
 	pass
 

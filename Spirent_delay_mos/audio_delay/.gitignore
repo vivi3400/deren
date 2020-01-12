@@ -1,0 +1,6 @@
+*.log
+*.pyc
+*.txt
+.DS_Store
+*.csv
+/.idea/
